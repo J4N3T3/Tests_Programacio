@@ -2,7 +2,7 @@
 
 int main() {
     int num1, i, resultado; 
-
+    resultado=0;
     printf("Introduce un numero: ");
     scanf_s("%d", &num1); 
 
