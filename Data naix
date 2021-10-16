@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+/*int main() {
+	float n1, resultat;
+	printf("Escriu un numero a polsades per passar-lo a centimetres:\n");
+	scanf_s("%f", &n1);
+	resultat = n1 / 2.54;
+	printf("%.4f cm", resultat);
+}*/
+
+int main() {
+	long actual, naix, resultat;
+
+	while (1) {
+		printf("A quin any estem?\n");
+		scanf_s("%d",&actual);
+		if (1900 <= actual && actual <= 2021) {
+			break;
+		}
+		else {
+			printf("Erroni,torna provar\n");
+		}
+	}
+	while (1){
+		printf("A quin any vas neixer?\n");
+		scanf_s("%d",&naix);
+		if (actual >= naix && naix >= 1900){
+			break;
+		}
+		else{
+			printf("Erroni,torna provar\n");
+		}
+	}
+	resultat = actual - naix;
+	printf("La teva edat es %d anys", resultat);
+
+	return 0;
+}
