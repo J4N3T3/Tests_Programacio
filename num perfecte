@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main() {
+    int num1, i, resultado; 
+
+    printf("Introduce un numero: ");
+    scanf_s("%d", &num1); 
+
+    for(i=1;i<num1;i++)
+    {
+        if(num1%i==0) 
+        {
+            resultado = resultado + i;
+            printf("%d, es divisor de %d \n", i, num1);
+        }
+    }
+    if (resultado == num1) {
+        printf("\n%d es un numero perfecto como tu bb", num1);
+    }
+}
