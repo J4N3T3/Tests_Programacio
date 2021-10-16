@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+/*Mostrar el siguiente menú para que el usuario pueda realizar la opción a o b.
+a) Leer tres números del teclado, calcular el mayor de ellos y escribir éste por pantalla.
+b) Leer tres números del teclado y determinar si la suma de cualquier pareja de ellos es igual al otro. Se deberá
+escribir por pantalla “Sí” si la propiedad se cumple o “No” en otro caso.*/
+
+int main() {
+	printf("Escoge entre:\n1) Leer tres números del teclado, calcular el mayor de ellos y escribir éste por pantalla.\n2) Leer tres números del teclado y determinar si la suma de cualquier pareja de ellos es igual al otro.\n");
+	int opcion;
+	while (1) {
+		scanf_s("%d", &opcion);
+		if (opcion == 1 || opcion==2) {
+			break;
+		}
+		else {
+			printf("Escoge 1 o 2:\n");
+		}
+	}
+	if (opcion == 1) {
+		int n1, n2, n3;
+		printf("Escriu tres nombres enters diferents;\n");
+		while (1){
+			scanf_s("%d", &n1);
+			scanf_s("%d", &n2);
+			scanf_s("%d", &n3);
+			if (n1 != n2 && n1 != n3 && n2!=n3) {
+				break;
+			}
+			else {
+				printf("Han de ser diferents\n");
+			}
+		}
+		if (n1 > n2 && n1 > n3) {
+			printf("El mes gran es el %d", n1);
+		}
+		if (n2 > n1 && n2 > n3) {
+			printf("El mes gran es el %d", n2);
+		}
+		if (n3 > n2 && n1 < n3) {
+			printf("El mes gran es el %d", n3);
+		}
+		
+	}
+	if (opcion == 2) {
+
+	}
+
+	return 0;
+}
