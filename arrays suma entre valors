@@ -1,0 +1,15 @@
+#include<stdio.h> 
+
+
+int main() {
+	int i, res=0;
+	int arr[] = { 2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71 };
+	for (i = 0; i < sizeof(arr)/sizeof(arr[0]); i++) {
+		printf("%d\n", arr[i]);
+	}
+	for (i = 0; i < sizeof(arr) / sizeof(arr[0]); i++){
+		res = res + arr[i];
+		arr[i] = res;
+	}
+	printf("tot aixo sumat es %d\n", res);
+}
