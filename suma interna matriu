@@ -1,0 +1,19 @@
+#include <stdio.h>
+int a[4][4];
+
+int main() {
+	int suma = 0;
+	printf("Escriu la matriu\n\n");
+	for (int x = 0; x < 4; x++){
+		for (int y = 0; y < 4; y++){
+			printf("Escribe el num de la fila %d columna %d ", x+1, y+1);
+			scanf_s("%d", &a[x][y]);
+		}
+	}
+	for (int x = 0; x < 4; x++){
+		for (int y = 0; y < 4; y++){
+			suma = suma + a[x][y];
+		}
+	}
+	printf("Suma: %d", suma);
+}
