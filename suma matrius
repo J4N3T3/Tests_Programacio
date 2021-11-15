@@ -1,0 +1,32 @@
+#include <stdio.h>
+int a[4][3], b[4][3], s[4][3];
+
+int main() {
+	printf("a\n");
+	for (int x = 0; x < 4; x++){
+		
+		for (int y = 0; y < 3; y++){
+			printf("Escribe el num de la fila %d columna %d ", x, y);
+			scanf_s("%d", &a[x][y]);
+		}
+	}
+	printf("b\n");
+	for (int x = 0; x < 4; x++) {
+		for (int y = 0; y < 3; y++) {
+			printf("Escribe el num de la fila %d columna %d ", x, y);
+			scanf_s("%d", &b[x][y]);
+		}
+	}
+	for (int x = 0; x < 4; x++){
+		for (int y = 0; y < 3; y++){
+			s[x][y] = a[x][y] + b[x][y];
+		}
+	}
+	printf("La suma dels dos es:\n");
+	for (int x = 0; x < 4; x++) {
+		for (int y = 0; y < 3; y++) {
+			printf("  %d  ", s[x][y]);
+		}
+		printf("\n");
+	}
+}
