@@ -2,7 +2,7 @@
 int a[3], b[3];
 
 int main() {
-	int producte = 1;
+	int producte = 0;
 	printf("Escriu el vector 1:\n");
 	for (int x = 0; x < (sizeof(a)/sizeof(a[0])); x++){
 		scanf_s("%d", &a[x]);
