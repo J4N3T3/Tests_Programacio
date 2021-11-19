@@ -18,8 +18,17 @@ int main() {
 	}
 	while (resposta!=val)
 	{
-		printf("Has fallat! Torna a provar jeje:\n");
-		scanf_s("%d", &resposta);
+		if (resposta<val)
+		{
+			printf("Prova un numero mes gran! Torna a provar jeje:\n");
+			scanf_s("%d", &resposta);
+		}
+		else if (resposta > val)
+		{
+			printf("Prova un numero mes petit! Torna a provar jeje:\n");
+			scanf_s("%d", &resposta);
+		}
+		
 	}
 	printf("Enhorabona! Besito pa tu body :)");
 }
