@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+	srand(time(NULL));
+	int cares = 0, nDaus = 0, a = 1, suma = 0;
+	
+	printf("Escriu el nombre de daus:\n");
+	scanf_s("%d", &nDaus);
+	while (nDaus <= 0)
+	{
+		printf("Ha de ser major que 0\n");
+		scanf_s("%d", &nDaus);
+	}
+	printf("Escriu el nombre de cares del dau:\n");
+	scanf_s("%d", &cares);
+	while (cares <= 0)
+	{
+		printf("Ha de ser major que 0\n");
+		scanf_s("%d", &cares);
+	}
+	for (int i = 0; i < nDaus; i++){
+		printf("El Dau %d dona:\n", i + 1);
+		
+		int val = rand() % (cares-a+1)+a;
+		printf("Ha sortit la cara del %d.\n", val);
+		suma = suma + val;
+	}
+	printf("\nLa suma es: %d", suma);
+}
