@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+
+int main() {
+	int M = 1, N = 5, resposta=0;
+	srand(time(NULL));
+	int val = rand() % (N - M + 1) + M;
+	printf("*****************************************\n");
+	printf("* ENDEVINA EL NUMERO I GUANYA UN BESITO *\n");
+	printf("*****************************************\n");
+	printf("Escriu un numero de l'1 al 5:\n");
+	scanf_s("%d", &resposta);
+	while (resposta<1||resposta>5)
+	{
+		printf("Ha de ser de l'1 al 5:\n");
+		scanf_s("%d", &resposta);
+	}
+	while (resposta!=val)
+	{
+		printf("Has fallat! Torna a provar jeje:\n");
+		scanf_s("%d", &resposta);
+	}
+	printf("Enhorabona! Besito pa tu body :)");
+}
