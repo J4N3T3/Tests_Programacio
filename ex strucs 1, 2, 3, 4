@@ -3,21 +3,33 @@
 
 int main() {
 	int val1 = 0, val2 = 0, val3 = 0;
-		
+	
 	struct dades
 	{
 		int val1, val2, val3;
+		int arr1[3];
 	};
 	struct dades valors;
+	int length = sizeof(valors.arr1) / sizeof(valors.arr1[0]);
 	valors.val1 = 4;
 	valors.val2 = 3;
 	valors.val3 = 1;
 	scanf_s("%d", &valors.val1);
 	scanf_s("%d", &valors.val2);
 	scanf_s("%d", &valors.val3);
+	printf("Array:\n");
 
+	for (int i = 0; i < length; i++){
+		scanf_s("%d", &valors.arr1[i]);
+	}
+	printf("\n");
 	printf("%d\n", valors.val1);
 	printf("%d\n", valors.val2);
 	printf("%d\n", valors.val3);
+	printf("Array:\n");
+
+	for (int i = 0; i < length; i++){
+		printf("%d ", valors.arr1[i]);
+	}
 
 }
