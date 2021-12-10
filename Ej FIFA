@@ -1,66 +1,136 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
-int opcions[6];
+typedef struct DatosEquipo1 {
+	char NombreEquipo[30];
+	int PartidosJugados;
+	int PartidosGanados;
+	int PartidosEmpatados;
+	int PartidosPerdidos;
+	int GolesAFavor;
+	int GolesEnContra;
+}d;
 
-int main() {
+void Introducir(d* data1);
+void Actualitzar(d* data1, int nTeam);
+
+int main() 
+{
 	int tria = 0;
-	struct Equipos{
-		char AlbaceteFC;
-		char FCComunistas;
-		char RCDPantone;
-		char RBetisBalompie;
-		char FCPies;
-		char 
-	};
-	struct Equipos Teams;
-	printf("Prem un dels seguents nombres per continuar:\n");
-	printf("1) Introduir les dades\n");
-	printf("2) Actualitzar les dades\n");
-	printf("3) Escriure el primer de la taula\n");
-	printf("4) Escriure l'ultim de la taula\n");
-	printf("5) Mostrar totes les dades\n");
-	printf("6) Sortir del programa\n");
-	scanf_s("%d", &tria);
-	while (1>tria||tria>6){
-		printf("Ha de ser un dels valors anteriors:\n");
+	int nTeam = 0;
+	
+	//struct DatosEquipo1 data1[10];
+	d data1[10];
+	
+	while (tria != 6)
+	{
+		printf("\nPrem un dels seguents nombres per continuar:\n");
+		printf("1) Introduir les dades\n");
+		printf("2) Actualitzar les dades\n");
+		printf("3) Mostrar el primer de la taula\n");
+		printf("4) Mostrar l'ultim de la taula\n");
+		printf("5) Mostrar totes les dades\n");
+		printf("6) Sortir del programa\n\n");
 		scanf_s("%d", &tria);
-	}
-	if (tria==1)
-	{
+		while (1 > tria || tria > 6) {
+			printf("Ha de ser un dels valors anteriors:\n");
+			scanf_s("%d", &tria);
+		}
 
-	}
-	else if (tria == 2)
-	{
+		switch (tria) {
+		case 1:
+			Introducir(&data1[0]);
+			break;
 
-	}
-	else if (tria == 3)
-	{
+		case 2:
+			printf("Quin equip vols actualitzar?\n");
+			scanf_s("%d", &nTeam);
+			Actualitzar(&data1, nTeam);
+			break;
 
-	}
-	else if (tria == 4)
-	{
+		case 3:
+			printf("b");
+			break;
 
-	}
-	else if (tria == 5)
-	{
+		case 4:
+			printf("b");
+			break;
 
-	}
-	else if (tria == 6)
-	{
+		case 5:
+			printf("b");
+			break;
 
+		}
+		if (tria == 6) {
+			break;
+		}
 	}
 }
-/*
-void burbuja(int opcions[6]) {
-	int i, j, aux = 0;
+
+void Introducir(d *data1){
+	for (int i = 0; i < 10; i++) {
+				while (getchar() != '\n');
+				printf("Escriu el nom de l'equip %d:\n", i + 1);
+				gets(data1[i].NombreEquipo);
+				fflush(stdin);
+				printf("Escriu els partits jugats de l'equip %d:\n", i + 1);
+				gets(data1[i].PartidosJugados);
+				fflush(stdin);
+				printf("Escriu els partits guanyats de l'equip %d:\n", i + 1);
+				gets(data1[i].PartidosGanados);
+				fflush(stdin);
+				printf("Escriu els partits perduts de l'equip %d:\n", i + 1);
+				gets(data1[i].PartidosPerdidos);
+				fflush(stdin);
+				printf("Escriu els partits empatats de l'equip %d:\n", i + 1);
+				gets(data1[i].PartidosEmpatados);
+				fflush(stdin);
+				printf("Escriu els gols a favor de l'equip %d:\n", i + 1);
+				gets(data1[i].GolesAFavor);
+				fflush(stdin);
+				printf("Escriu els gols en contra de l'equip %d:\n", i + 1);
+				gets(data1[i].GolesEnContra);
+				fflush(stdin);
+	}
+}
+void Actualitzar(d *data1, int nTeam) {
+	for (int i = nTeam; i < nTeam + 1; i++) {
+		while (getchar() != '\n');
+		printf("Escriu el nou nom de l'equip %d:\n", i);
+		gets(data1[i].NombreEquipo);
+		fflush(stdin);
+		printf("Escriu els partits jugats de l'equip %d:\n", i);
+		gets(data1[i].PartidosJugados);
+		fflush(stdin);
+		printf("Escriu els partits guanyats de l'equip %d:\n", i);
+		gets(data1[i].PartidosGanados);
+		fflush(stdin);
+		printf("Escriu els partits perduts de l'equip %d:\n", i);
+		gets(data1[i].PartidosPerdidos);
+		fflush(stdin);
+		printf("Escriu els partits empatats de l'equip %d:\n", i);
+		gets(data1[i].PartidosEmpatados);
+		fflush(stdin);
+		printf("Escriu els gols a favor de l'equip %d:\n", i);
+		gets(data1[i].GolesAFavor);
+		fflush(stdin);
+		printf("Escriu els gols en contra de l'equip %d:\n", i);
+		gets(data1[i].GolesEnContra);
+		fflush(stdin);
+	}
+}
+
+void burbuja(d *data1) {
+	int i, j = 0;
+	d aux;
 	for (i = 0; i < 6; i++) {
 		for (j = 0; j < 6 - 1; j++) {
-			if (opcions[j] > opcions[j + 1]) {
-				aux = opcions[j];
-				opcions[j] = opcions[j + 1];
-				opcions[j + 1] = aux;
+			if (data1[j].PartidosGanados > data1[j + 1].PartidosGanados) {
+				aux = data1[j];
+				data1[j] = data1[j + 1];
+				data1[j + 1] = aux;
 			}
 		}
 	}
-}*/
+}
